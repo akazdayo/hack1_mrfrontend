@@ -4,13 +4,14 @@ import NavigationButton from "@/components/navigation_buttun";
 import ChatIcon from "@/components/icon/chat";
 import Memory_Icon from "@/components/icon/memory";
 import SettingIcon from "@/components/icon/setting";
+import { Goal } from "@/components/goal";
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen overflow-hidden bg-gray-900">
+    <div className="relative min-h-screen overflow-hidden bg-gray-900/40">
       {/* 背景画像 */}
       <Image
-        src="/images/main1.jpg"
+        src="/images/home.png"
         alt="Space background"
         fill
         className="object-cover z-0"
@@ -18,8 +19,8 @@ export default function Home() {
       
       <div className="relative z-10">
         <Home_Header />
-
-        <div className="bg-gray-200/40 border-white rounded-4xl min-h-screen">
+        <Goal/>
+        
           <div className="flex justify-center pt-10">
             <NavigationButton
               href="timer"
@@ -36,6 +37,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-    </div>
+    
   );
 }

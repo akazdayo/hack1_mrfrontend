@@ -2,7 +2,7 @@ import React from 'react';
 
 const SettingIcon = ({
   className = "w-10 h-10",
-  strokeColor = "#7893C4", // 輪郭色デフォルト
+  strokeColor = "#F9BF8D", // 輪郭色デフォルト
   ...props
 }) => {
   return (

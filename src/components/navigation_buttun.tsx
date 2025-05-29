@@ -39,7 +39,7 @@ const NavigationButton: React.FC<NavigationButtonProps> = ({ href, label, varian
     }
   };
 
-  // timerだけ構造を変える（例：右矢印アイコン付き）
+  // timerだけ構造を変える
   if (variant === 'timer') {
     return (
       <button
@@ -48,8 +48,8 @@ const NavigationButton: React.FC<NavigationButtonProps> = ({ href, label, varian
         style={{ backgroundColor: 'transparent', padding: 0, border: 'none' }}
       >
         <img
-          src="/images/timer.png"
-          style={{ width: '300px', height: '75px' }}
+          src="/images/timer_button.png"
+          style={{ width: '300px', height: '80px' }}
           alt={label}
           
         />
@@ -62,7 +62,7 @@ const NavigationButton: React.FC<NavigationButtonProps> = ({ href, label, varian
   // 通常のボタン構造
   return (
     <button onClick={handleClick} className={`${getClassName()} ${className || ''}`}
-    style={{ backgroundColor: '#ffffff', border: '1px solid #7893C4' }}>
+    style={{ backgroundColor: '#ffffff', border: '1px solid #F9BF8D' }}>
        <span className="flex items-center justify-center">{icon}</span>
       {label}
     </button>
