@@ -1,0 +1,43 @@
+
+var ftGUID_9507162="6316319DA1039E";
+var ftConfID_9507162="0";
+var ftParams_9507162="ftOBA=1&ft_agentEnv=0&ft_referrer=https://illust.download/archives/29655;https%3A%2F%2Fillust.download%2Farchives%2F29655&us_privacy=${US_PRIVACY}&ft_partnerimpid=ABAjH0ghnITTgQWHyntr8c_sNFcf;ABAjH0ghnITTgQWHyntr8c_sNFcf&site_url=https://illust.download/archives/29655&pub_id=1&sup_platform=1&cachebuster=169431.76724371832&ft_keyword=DV360CampID:__22506115195__&ft_section=DV360CampID:22506115195";
+var ftKeyword_9507162="";
+var ftCustom_9507162="";
+var ftSection_9507162="DV360CampID:22506115195";
+var ftSegment_9507162="";
+var ftSegmentList_9507162=[];
+var ftRuleMatch_9507162="0";
+var ftTimestamp_9507162="1748334978";
+var ftGeoC2_9507162="jp";
+var ftGeoState_9507162="23";
+var ftGeoCity_9507162="nagoya";
+var ftISP_9507162="sugiyama jogakuen university";
+var ftSpeed_9507162="broadband";
+var ftConnType_9507162="wifi";
+var ftDMA_9507162="392003";
+var ftLong_9507162="136.98";
+var ftLat_9507162="35.16";
+var ftPostal_9507162="464-0802";
+var ftTimeZone_9507162="+900";
+var ftMobileCarrier_9507162="";
+var ftImp9507162 = {};
+ftImp9507162.privacy = "x";
+ftImp9507162.guidAge = "40";
+ftImp9507162.impID = "86C665EA-EFD9-83D3-5821-75824B84444C";
+ftImp9507162.duid = "FT:6316319DA1039E";
+
+ftImp9507162.ft_tpplid = "";
+ftImp9507162.ft_c = {};
+ftImp9507162.gdpr = "";
+ftImp9507162.gdpr_consent = "";
+ftImp9507162.gdpr_pd = "";
+ftImp9507162.oob_consent = "";
+ftImp9507162.gdprStoredConsent = "";
+ftImp9507162.us_privacy = "!!US_PRIVACY!";
+ftImp9507162.gpc = "";
+
+ftImp9507162.jsAppend = "1";
+var ftCreativeId_9507162 = "5307984";
+(function(){var tag=document.getElementById("ft_servedby_9507162")||function(s){return s[s.length-1]}(document.getElementsByTagName("script")),js=document.createElement("script");js.src="https://ajs-assets.ftstatic.com/ftUtils.js";js.id="ftscript_m9507162";js.setAttribute("name","ftscript_m9507162");tag.parentNode.insertBefore(js,tag)})();window.fTChecker=window.fTChecker||function(id){if(!id)return false;id=""+id;if(window.hasOwnProperty("ftUtils")){window["ft"+id]=Object.assign({},window.ftUtils.common);window["ft"+id].getBannerConfig(id)}else(function(id){window.setTimeout(function(){window.fTChecker(id)},50)})(id)};window.fTChecker("9507162");
+

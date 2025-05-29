@@ -1,0 +1,145 @@
+
+(function(d,w,h,r,f,m){
+	
+	if(d.body){
+		f=d.createElement("iframe");
+		var s = d.currentScript;
+		if(!s){
+			s=d.scripts[d.scripts.length-1];
+		}
+		s.parentNode.insertBefore(f, s.nextSibling);
+		f.id=r
+	}else{
+		
+		d.write("<iframe id='"+r+"'></iframe>");
+		f=d.getElementById(r);
+	}
+	f.scrolling="no";
+	f.frameborder="0";
+	f.vspace="0";
+	f.hspace="0";
+	f.marginwidth="0";
+	f.marginheight="0";
+	f.width=w;
+	f.height=h;
+	f.style.margin="0";
+	f.style.border="none";
+	f.style.padding="0";
+	f.style.overflow="hidden";
+	
+
+	f.contentWindow.document.open();
+	try{
+		
+f.contentWindow.document.write("<body style='margin:0;padding:0;overflow:hidden;'>");
+
+var id;
+while(document.getElementById(id='ii_'+Math.random().toString(36).substring(2,16)));
+var aid;
+while(document.getElementById(aid='iia_'+Math.random().toString(36).substring(2,16)));
+var width = 160;
+var image = "https://cd.ladsp.com/";
+var information_icon ='<style type="text/css">'+
+'#'+id+', #'+id+' * { display: block; position: absolute; margin: 0px; padding: 0px; overflow: hidden; }'+
+'#'+id+'{ z-index: 100; width: 160px; position: relative; height: 0px; overflow: visible;}'+
+'#'+id+' a { right: 0px; width: auto; border-bottom-left-radius: 4px; overflow: visible; background-color: rgba(255, 255, 255, 0.8); color: #000; text-decoration: none; }'+
+'#'+id+' a span { position: relative; float: right; }'+
+'#'+id+' a .iconText { display: none; width: auto; line-height: 14px; margin: 1px 1px 0px 4px; font-family:\'ヒラギノ角ゴシック Pro\', \'Hiragino Kaku Gothic Pro\', \'メイリオ\', \'Meiryo UI\', Meiryo, Osaka, \'ＭＳ Ｐゴシック\', \'MS PGothic\', sans-serif; font-size:10.5px; font-weight: bold; }'+
+'#'+id+' a:hover .iconText { display: block; }'+
+'#'+id+' a .icon { margin: 0px 1px; width: 15px; height: 15px; }'+
+'.cls-1{fill:#555;height: 4.5px !important;}'+
+'.cls-2{fill:none;height: 11px !important;}'+
+'.cls-2{stroke:#555;stroke-miterlimit:10;stroke-width:1px;}'+
+'</style>'+
+'<div id="'+id+'">'+
+'<a href="https://tag.ladsp.com/html/optout.html?pb=101&dc=1&ag=381&ad=9131&tg=1639514&cl=6507267&rq=7838400503427114206&at=1748334978125" target="_blank" id="'+aid+'">'+
+'<span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15"><path fill="#555" d="M7.495 1l-.292.02-.28.04-.27.08-.272.11-.25.14-.225.17-.222.19-3.947 3.94-.362.46-.25.52-.12.55v.56l.12.55.25.52.363.46 3.948 3.94.223.19.23.17.25.14.27.11.272.07.28.05.29.02.3-.02.28-.05.27-.07.27-.11.25-.14.233-.17.22-.19 3.95-3.94.36-.46.25-.52.12-.55v-.56l-.12-.55-.25-.52-.36-.46-3.95-3.94-.222-.19-.23-.17-.25-.14-.27-.11-.27-.08-.28-.04zm0 1.12l.17.01.16.03.152.04.148.06.14.08.133.09.12.11 3.947 3.94.212.26.14.29.07.31v.32l-.07.31-.14.29-.212.26L8.9 12.04l-.033.03-.06.04-.04.02-.04.01-.04.01h-.08l-.04-.01-.04-.01-.03-.02-.04-.02-.03-.02-.03-.03-.02-.02-.03-.04-.02-.03-.01-.04-.01-.03-.01-.04V7.89l-.02-.17-.07-.16-.09-.14-.13-.12-.14-.09-.172-.06-.17-.02h-.01l-.21.1-.172.1-.15.11-.11.11-.08.11-.05.11-.02.12v3.95l-.01.04-.01.03-.01.04-.02.03-.03.04-.02.02-.03.03-.03.02-.04.02-.03.02-.08.02h-.08l-.08-.02-.042-.02-.06-.04-.03-.03-3.574-3.52-.2-.26-.14-.29-.07-.31v-.32l.07-.31.14-.29.2-.26 3.95-3.94.13-.11.13-.09.14-.08.15-.06.15-.04.162-.03zm.01 1.65c-.642 0-1.153.52-1.153 1.15 0 .63.51 1.15 1.153 1.15.63 0 1.143-.52 1.143-1.15 0-.63-.512-1.15-1.143-1.15z"/></svg></span>'+
+'<span class="iconText">Logicad 広告</span>'+
+'</a>'+
+'</div>';
+f.contentWindow.document.write(information_icon);
+
+f.contentWindow.document.write('<a id="adLogicadA1748334978125-7838400503427114206" href="https://adclick.g.doubleclick.net/aclk?sa=L&ai=CkJfKWnk1aNLzK4Lks8IPwfW8mA_9p9X1XLT8uqdUwI23ARABIABgibPPhJwUggEXY2EtcHViLTcwMDU1MjI2OTI0NTg4NDHIAQmpAnCWcifvJz4-qAMByAMCqgTMAU_QNZemrBiFAS6xKb9cGKSY_A0LbOqBCRG6bqmqKEG5sJpHJgv0wOVUQDAuGkW4vUp5Vmt9rM50lKDKzDs6-I5d65A-8-86-zjnuToZl6xBl_NFld_aA1e6xtX9LdUdU6lM5v71RIRFK8bizK-G5xvBj5DerBVe33DCplwxQ_pXGVV7ygGS2suy3HrLxfN9anoSMdTD8YLZ0nmPHsJHyislFyZ9G5EcImd0Dl9i3dtpJiL9Dx_yPMpb7X8rYtoj6nYOT4JJVncmwLJBwoAGp6_HloeMrrF9oAYhiAcBkAcCqAemvhuoB5bYG6gHqpuxAqgH_56xAqgH35-xAqgHrb6xAqgHv9OxAtgHANIIJxACMgEAOhKf0ICAgIAEgMCAgICgqIACoAFIvf3BOlj51eGXn8ONA_oLAggBgAwBqg0CSlDqDRMIyZzwl5_DjQMVAvJMAh3BOg_z0BUBgBcBshcCGAw&num=1&cid=CAQSQgDZpuyz2S1J0YB9VTZ3UKoOyuG5QLIxICCGLwXOFQcDwg27huyRHy9-iRdy15NS5rU5h0T2RUPzTTabVOoi4GQOZhgBIAg&sig=AOD64_2fVy547-Dbh4h6XCACbjoyT7Pfvw&client=ca-pub-7005522692458841&adurl=https%3A%2F%2Ftag.ladsp.com%2Fclk2%3Fckv%3D1%26c2%3DAWxTxHDBVB0QoiBTrJLtPHhGOmrWE4EZKHzyakiUFi_Q8WzeHkQGPi8h6HnfG6s6PYW9JpXkm1mnJkfMmCH0n2H-qbJ6OA6nEvcao-lLhyTQKKa-qw3wnKTGC1PQe_rslfstWCf67VM7BG3EMxwue7Z3sWK_tmHnDKNk067wMhLTAamk9o4CKeyMb3tv-EFXHBUbf4UpOfBdLJ6D4CoKs3LugABdy57WI3iukwVt0t0-M5lABwjueot39YtuoO9uSmtQbjdqyBYzKhn9gOPBLCjXOWD2w09ASiP0lYbcsqKAd6hAeSoVTRcibkhR-q51Cbmy1CYJVgmMoRvvJHTKctz3nJriLQ52Cu-Crs93GsK45EVg5jSYLo1c7WhJB94L8xxUhtkBsuCl7X2qAT0YuQiYBt3yFawGoiE55gzVtaCLpzsY-DIBSEiA9Rat4GqVvFTQ3km0HZJZfnU2whoqqsQutUR1gH_g8zMfNiJwh0x84hjISW28awdSqtPbDGZwaSiQKd7L0J46mG0qvYoLnDHKFJp-8Rq7r4lk_Ju76sCYy0PJ2VBGMLbEIsI0w1W8-swSPdE7Ton07efglr2EBr8aXjSEfDPkr3xZzy3l_BxfgMAuNSA4b2Dd3cisf3U7p-Dait4YFHEVPWjXU0TNpoLgHm6Aq3yStJHujT2AS8bBZJnjb5moOdRLYYTisEQjv6wYUlIP3yco26N30AO2bYRu2OeWm03FYu-1di8hPDfcZE7-PZyOtuQRm_XLaCwDG7vJqW9qRpIrOARECeOqkvr6oQFoxE51---1Kxlp2BzJqZTj9ZaJMTAwP9-nvxyka_Bckxsif8Pcde_7EeplhGA9pooXThriOztPsUEoYewF" target="_blank">'
+	+ '<img src="https://cd.ladsp.com/creative/02/510/039/5267308606.jpg" border="0" width="'+w+'" height="'+h+'" style="display:block" />'
+	+ '</a>');
+
+f.contentWindow.document.write(decodeURIComponent(''));
+
+f.contentWindow.document.write("</body>");
+(function() {
+    if (typeof f.contentWindow.document.featurePolicy != 'undefined' && f.contentWindow.document.featurePolicy != null && typeof f.contentWindow.document.featurePolicy.allowsFeature == 'function' && f.contentWindow.document.featurePolicy.allowsFeature('attribution-reporting')) {
+       var script =  f.contentWindow.document.createElement('script');
+       script.src = '';
+       script.setAttribute('attributionsrc', 'https://ps.ladsp.com/attribution_source/imp?lrid=7838400503427114206&adid=9131&stid=132826');
+       f.contentWindow.document.head.appendChild(script);
+    }
+})();
+
+(function() {
+    if (typeof f.contentWindow.document.featurePolicy != 'undefined' && f.contentWindow.document.featurePolicy != null && typeof f.contentWindow.document.featurePolicy.allowsFeature == 'function' && f.contentWindow.document.featurePolicy.allowsFeature('attribution-reporting')) {
+        if (f.contentWindow.document.readyState === 'loading') {
+            f.contentWindow.document.addEventListener('DOMContentLoaded', function() {
+                var elements = f.contentWindow.document.getElementsByTagName('a');
+                for (var i = 0; i < elements.length; i++) {
+                    var element = elements[i];
+                    if (element.id.indexOf('iia') != 0) {
+                        element.setAttribute('attributionsrc', 'https://ps.ladsp.com/attribution_source/clk?lrid=7838400503427114206&adid=9131&stid=132826');
+                    }
+                }
+            });
+        } else {
+            var elements = f.contentWindow.document.getElementsByTagName('a');
+            for (var i = 0; i < elements.length; i++) {
+                var element = elements[i];
+                if (element.id.indexOf('iia') != 0) {
+                    element.setAttribute('attributionsrc', 'https://ps.ladsp.com/attribution_source/clk?lrid=7838400503427114206&adid=9131&stid=132826');
+                }
+            }
+        }
+    }
+})();
+
+		f.contentWindow.document.write("<script>inDapIF = true;</script>");
+	}catch(e){}
+	f.contentWindow.document.close();
+	
+})(document,"160","600","adLogicadBNR1748334978125-7838400503427114206");
+
+(function() {
+var script = document.createElement("script");
+script.async=true;
+script.src = 'https://cd.ladsp.com/script/viewable4.js';
+document.head.appendChild(script);
+window.logicadViewableManager = window.logicadViewableManager || {};
+logicadViewableManager.cmd = logicadViewableManager.cmd || [];
+logicadViewableManager.cmd.push(function() {
+  logicadViewableManager.observe({
+    target: document.getElementById("adLogicadBNR1748334978125-7838400503427114206"),
+    delaySecondsArray: [0.5, 3, 5],
+    host: 'https://inview.ladsp.com',
+    path: '/inview2',
+    aggpath: '/agginview2',
+    parameters: '?ckv=1&inv=Ae0gSB6vs_jEygiw2vlo-U3Ef40hJ1aqfAjAjrCduVBLPRJ2ePBeNOHrV2mBBfig5snT6pGweB_Qjcj2l5Mhz9tZs_0ZHtYnP7M6N4EbkGSy_VAmibsnEeFE2tgGsPMQFVUEW9lIJ96xhtBS_grJsqcVNa5SkKpg__JJlJWxhBER8QAjRnSwdfulwlUJM1KJSj2mihdOGuI7O0-xQShh7AU&asid=7838401822720252100&av=0',
+    size: '160x600',
+    experiment: {
+      isTreatment: true,
+      isTarget: false
+    }
+  });
+});
+})();
+
+(function () {
+    if ('browsingTopics' in document && document.featurePolicy.allowsFeature('browsing-topics')) {
+        var bodies = document.getElementsByTagName("body")
+        if (bodies && bodies.length > 0) {
+            var b = bodies[0]
+            var e = document.createElement("iframe")
+            e.width = 1
+            e.height = 1
+            e.style.display = "none"
+            e.src = "https://cd.ladsp.com/html/getTopics2.html?stu=Yb9R6Bi8mukZrSgOOOK1pw"
+            b.appendChild(e)
+        }
+    }
+})()
