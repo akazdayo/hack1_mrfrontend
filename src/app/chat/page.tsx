@@ -1,24 +1,131 @@
+'use client';
+
+import React, { useState, useRef, useEffect, KeyboardEvent, ChangeEvent } from 'react';
 import Image from "next/image";
 import NavigationButton from "@/components/navigation_buttun";
 import BackIcon from "@/components/icon/back";
+import DateIndicator from '@/components/chat/date';
+import Avatar from '@/components/chat/avatar_icon';
+import MessageBubble from "@/components/chat/MessageBubble";
+import MessageInput from '@/components/chat/messageInput';
+import MessageList from '@/components/chat/MessageList';
+import Header from '@/components/chat/Header';
 
-export default function Home() {
+interface Message {
+  id: number;
+  text: string;
+  sender: string;
+  time: string;
+  isRead: boolean;
+}
+
+// メインのチャットページ
+export default function AliceChatPage() {
+  const [messages, setMessages] = useState<Message[]>([
+    {
+      id: 1,
+      text: "勉強やってみたいんだけどさ、一緒にやらない？",
+      sender: "alice",
+      time: "12:50",
+      isRead: false
+    },
+    {
+      id: 2,
+      text: "いいよー‼一緒にやろうー！",
+      sender: "user",
+      time: "12:51",
+      isRead: true
+    },
+    {
+      id: 3,
+      text: "ありがとう！！！！",
+      sender: "alice",
+      time: "12:51",
+      isRead: false
+    },
+    {
+      id: 4,
+      text: "まず、なにからやったほうががいいかな...？",
+      sender: "alice",
+      time: "12:51",
+      isRead: false
+    },
+    {
+      id: 5,
+      text: "まずは○○○○からやってみる？",
+      sender: "user",
+      time: "12:54",
+      isRead: true
+    }
+  ]);
+  
+  const [newMessage, setNewMessage] = useState('');
+  const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages]);
+
+  const handleSendMessage = () => {
+    if (newMessage.trim()) {
+      const message = {
+        id: messages.length + 1,
+        text: newMessage,
+        sender: "user",
+        time: new Date().toLocaleTimeString('ja-JP', { hour: '2-digit', minute: '2-digit' }),
+        isRead: false
+      };
+      setMessages([...messages, message]);
+      setNewMessage('');
+    }
+  };
+
+  const handleKeyPress = (e: KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      handleSendMessage();
+    }
+  };
+
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setNewMessage(e.target.value);
+  };
+
   return (
+    
     <div className="relative min-h-screen overflow-hidden bg-gray-900/40">
       {/* 背景画像 */}
       <Image
         src="/images/chat.png"
-        alt="Space background"
+        alt="Chat background"
         fill
         className="object-cover z-0"
       />
-      <div className="relative z-10">
-      <div className="h-28 w-full bg-black" style={{background:"#FDDE81"}}>
-        <NavigationButton href="home" label="" variant="back" icon={<BackIcon />} />
-        <div className="text-3xl text-white font-bold flex justify-center item-center">Alice</div>
-      </div>
-      </div>
       
+      <div className="relative z-10 flex flex-col min-h-screen max-w-sm mx-auto">
+        {/* ヘッダー */}
+        <Header />
+
+        <div className="mt-30">
+          {/* 日付インジケーター */}
+        <DateIndicator />
+        <div className="mt-3">
+        {/* メッセージリスト */}
+        <MessageList messages={messages} messagesEndRef={messagesEndRef} />
+
+        {/* 入力エリア */}
+        <MessageInput
+          value={newMessage}
+          onChange={handleInputChange}
+          onSend={handleSendMessage}
+          onKeyPress={handleKeyPress}
+        />
+</div>
+</div>
       </div>
-        );
+    </div>
+  );
 }

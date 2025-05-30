@@ -6,6 +6,7 @@ import Memory_Icon from "@/components/icon/memory";
 import SettingIcon from "@/components/icon/setting";
 import { Goal } from "@/components/goal";
 
+
 export default function Home() {
   return (
     <div className="relative min-h-screen overflow-hidden bg-gray-900/40">
