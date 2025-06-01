@@ -14,6 +14,9 @@ export default function Home() {
   // 今日の目標を管理する->これをGoalをデータベースに保存する。
   const [todayGoal, setTodayGoal] = useState<string>("");
 
+  // 今日の目標を設定する関数
+  setIsStart(sessionStorage.getItem("timerCompleted") === "true"? false : true);
+
   return (
     <div className="relative min-h-screen overflow-hidden bg-gray-900/40">
       {/* 背景画像 */}
