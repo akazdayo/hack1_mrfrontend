@@ -8,8 +8,7 @@ const Timer = () => {
   const totalTime = 25 * 60; // 25分
   const [timeLeft, setTimeLeft] = useState(totalTime);
   const [isRunning, setIsRunning] = useState(true);
-  const router = useRouter(); // ← 追
-
+  const router = useRouter(); // ← 追加
 
   useEffect(() => {
     if (!isRunning) return;
