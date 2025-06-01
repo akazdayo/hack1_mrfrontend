@@ -1,16 +1,16 @@
 import MessageItem from './message_Item';
 
 interface Message {
-  id: number;
+  id: number | null;
   text: string;
-  sender: string;
+  sender: "alice" | "user";
   time: string;
-  isRead: boolean;
+  isRead: boolean | null;
 }
 
 interface MessageListProps {
   messages: Message[];
-  messagesEndRef: React.RefObject<HTMLDivElement>;
+  messagesEndRef: React.RefObject<HTMLDivElement | null>;
 }
 
 const MessageList = ({ messages, messagesEndRef }: MessageListProps) => (
