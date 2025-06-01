@@ -31,10 +31,10 @@ export default function Home() {
             />
           </div>
 
-          <div className="mt-10 flex justify-center gap-4 ">
+          <div className="mt-8 flex justify-center gap-6 ">
             <NavigationButton href="chat" label="" variant="chat" icon={<ChatIcon />} />
             <NavigationButton href="memory" label="" variant="memory"icon={<Memory_Icon />} />
-            <NavigationButton href="setting" label="" variant="setting" icon={<SettingIcon />}/>
+            
           </div>
         </div>
       </div>
