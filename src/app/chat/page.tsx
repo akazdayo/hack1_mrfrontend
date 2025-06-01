@@ -27,39 +27,11 @@ interface LLMResponse {
 export default function AliceChatPage() {
   const [messages, setMessages] = useState<Message[]>([
     {
-      id: 1,
-      text: "勉強やってみたいんだけどさ、一緒にやらない？",
+      id: 0,
+      text: "こんにちは！アリスだよ！",
       sender: "alice",
       time: "12:50",
       isRead: false
-    },
-    {
-      id: 2,
-      text: "いいよー‼一緒にやろうー！",
-      sender: "user",
-      time: "12:51",
-      isRead: true
-    },
-    {
-      id: 3,
-      text: "ありがとう！！！！",
-      sender: "alice",
-      time: "12:51",
-      isRead: false
-    },
-    {
-      id: 4,
-      text: "まず、なにからやったほうががいいかな...？",
-      sender: "alice",
-      time: "12:51",
-      isRead: false
-    },
-    {
-      id: 5,
-      text: "まずは○○○○からやってみる？",
-      sender: "user",
-      time: "12:54",
-      isRead: true
     }
   ]);
 
