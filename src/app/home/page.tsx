@@ -15,10 +15,13 @@ export default function Home() {
   const [todayGoal, setTodayGoal] = useState<string>("");
 
   // 今日の目標を設定する関数
-  setIsStart(sessionStorage.getItem("timerCompleted") === "true"? false : true);
-  if (sessionStorage.getItem("timerCompleted") === "true") {
-    sessionStorage.removeItem("timerCompleted");
-  }
+  useEffect(() => {
+    const timerCompleted = sessionStorage.getItem("timerCompleted") === "true";
+    setIsStart(!timerCompleted);
+    if (timerCompleted) {
+      sessionStorage.removeItem("timerCompleted");
+    }
+  }, []);
 
   return (
     <div className="relative min-h-screen overflow-hidden bg-gray-900/40">
