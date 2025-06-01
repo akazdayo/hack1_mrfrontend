@@ -30,7 +30,7 @@ export default function AliceChatPage() {
       id: 0,
       text: "こんにちは！アリスだよ！",
       sender: "alice",
-      time: "12:50",
+      time: new Date().toLocaleTimeString('ja-JP', { hour: '2-digit', minute: '2-digit' }),
       isRead: false
     }
   ]);
