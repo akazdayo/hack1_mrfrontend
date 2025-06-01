@@ -65,6 +65,7 @@ export default function AliceChatPage() {
 
   const [newMessage, setNewMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [isTyping, setIsTyping] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
@@ -74,10 +75,10 @@ export default function AliceChatPage() {
 
   useEffect(() => {
     scrollToBottom();
-  }, [messages]);
+  }, [messages, isTyping]);
 
   const handleSendMessage = async () => {
-    if (newMessage.trim() && !isLoading) {
+    if (newMessage.trim() && !isLoading && !isTyping) {
       const messageText = newMessage.trim();
       setNewMessage('');
       setIsLoading(true);
@@ -94,6 +95,10 @@ export default function AliceChatPage() {
       setMessages(prev => [...prev, userMessage]);
 
       try {
+        // タイピングインジケーターを表示
+        setIsTyping(true);
+        setIsLoading(false);
+
         // APIにリクエストを送信
         const response = await fetch('/api/llm', {
           method: 'POST',
@@ -127,13 +132,15 @@ export default function AliceChatPage() {
         setErrorMessage('通信エラーが発生しました。もう一度お試しください。');
         console.error('API呼び出しエラー:', error);
       } finally {
+        // タイピングインジケーターを非表示
+        setIsTyping(false);
         setIsLoading(false);
       }
     }
   };
 
   const handleKeyPress = (e: KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === 'Enter' && !isLoading) {
+    if (e.key === 'Enter' && !isLoading && !isTyping) {
       handleSendMessage();
     }
   };
@@ -162,14 +169,14 @@ export default function AliceChatPage() {
           <DateIndicator />
           <div className="mt-3">
             {/* メッセージリスト */}
-            <MessageList messages={messages} messagesEndRef={messagesEndRef} />
+            <MessageList messages={messages} messagesEndRef={messagesEndRef} isTyping={isTyping} />
 
             {/* ローディング表示 */}
             {isLoading && (
               <div className="flex items-center justify-center py-4">
                 <div className="flex items-center space-x-2 text-white/80">
                   <div className="animate-spin h-4 w-4 border-2 border-white/30 border-t-white rounded-full"></div>
-                  <span className="text-sm">AIが考えています...</span>
+                  <span className="text-sm">メッセージを送信中...</span>
                 </div>
               </div>
             )}
@@ -193,6 +200,7 @@ export default function AliceChatPage() {
               onChange={handleInputChange}
               onSend={handleSendMessage}
               onKeyPress={handleKeyPress}
+              disabled={isLoading || isTyping}
             />
           </div>
         </div>
