@@ -29,6 +29,7 @@ const Timer = () => {
   // タイマーが0になったときにホームに戻る
   useEffect(() => {
     if (timeLeft === 0) {
+      sessionStorage.setItem("timerCompleted", "true");
       router.push("/home"); 
     }
   }, [timeLeft, router]); 

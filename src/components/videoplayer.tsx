@@ -22,12 +22,12 @@ const VideoPlayer = () => {
             <div className="relative">
        {/* アイコンをビデオの上に重ねる */}
         <NavigationButton
-                href="home"
-                label=""
-                variant="back"
-                icon={<BackIcon />}
-                className="absolute top-4 left-4 z-20"
-              />
+                href="home"
+                label=""
+                variant="back"
+                icon={<BackIcon />}
+                className="absolute top-4 left-4 z-20"
+            />
         </div>
 
 

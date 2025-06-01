@@ -6,7 +6,6 @@ import NavigationButton from "@/components/navigation_buttun";
 import BackIcon from "@/components/icon/back";
 import DateIndicator from '@/components/chat/date';;
 import MessageBubble from "@/components/chat/MessageBubble";
-import DateIndicator from '@/components/chat/date';
 import MessageInput from '@/components/chat/messageInput';
 import MessageList from '@/components/chat/MessageList';
 import Header from '@/components/chat/Header';
