@@ -16,6 +16,9 @@ export default function Home() {
 
   // 今日の目標を設定する関数
   setIsStart(sessionStorage.getItem("timerCompleted") === "true"? false : true);
+  if (sessionStorage.getItem("timerCompleted") === "true") {
+    sessionStorage.removeItem("timerCompleted");
+  }
 
   return (
     <div className="relative min-h-screen overflow-hidden bg-gray-900/40">
