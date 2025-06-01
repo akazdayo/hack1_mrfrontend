@@ -8,7 +8,8 @@ const Timer = () => {
   const totalTime = 25 * 60; // 25分
   const [timeLeft, setTimeLeft] = useState(totalTime);
   const [isRunning, setIsRunning] = useState(true);
-  const router = useRouter(); // ← 追加
+  const router = useRouter(); // ← 追
+
 
   useEffect(() => {
     if (!isRunning) return;
@@ -29,6 +30,7 @@ const Timer = () => {
   // タイマーが0になったときにホームに戻る
   useEffect(() => {
     if (timeLeft === 0) {
+      
       router.push("/home"); 
     }
   }, [timeLeft, router]); 
