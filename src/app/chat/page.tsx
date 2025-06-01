@@ -5,7 +5,6 @@ import Image from "next/image";
 import NavigationButton from "@/components/navigation_buttun";
 import BackIcon from "@/components/icon/back";
 import DateIndicator from '@/components/chat/date';
-import Avatar from '@/components/chat/avatar_icon';
 import MessageBubble from "@/components/chat/MessageBubble";
 import MessageInput from '@/components/chat/messageInput';
 import MessageList from '@/components/chat/MessageList';
@@ -25,38 +24,10 @@ export default function AliceChatPage() {
     {
       id: 1,
       text: "勉強やってみたいんだけどさ、一緒にやらない？",
-      sender: "alice",
+      sender: "AI",
       time: "12:50",
       isRead: false
     },
-    {
-      id: 2,
-      text: "いいよー‼一緒にやろうー！",
-      sender: "user",
-      time: "12:51",
-      isRead: true
-    },
-    {
-      id: 3,
-      text: "ありがとう！！！！",
-      sender: "alice",
-      time: "12:51",
-      isRead: false
-    },
-    {
-      id: 4,
-      text: "まず、なにからやったほうががいいかな...？",
-      sender: "alice",
-      time: "12:51",
-      isRead: false
-    },
-    {
-      id: 5,
-      text: "まずは○○○○からやってみる？",
-      sender: "user",
-      time: "12:54",
-      isRead: true
-    }
   ]);
   
   const [newMessage, setNewMessage] = useState('');
@@ -80,6 +51,7 @@ export default function AliceChatPage() {
         isRead: false
       };
       setMessages([...messages, message]);
+
       setNewMessage('');
     }
   };
