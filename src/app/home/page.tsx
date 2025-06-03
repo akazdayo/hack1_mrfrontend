@@ -33,6 +33,7 @@ export default function Home() {
       },
     });
   }
+  
   return (
     <div className="relative min-h-screen overflow-hidden bg-gray-900/40">
       {/* 背景画像 */}
