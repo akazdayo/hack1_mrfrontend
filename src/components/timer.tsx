@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import { useRouter } from "next/navigation"; // ← 追加
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 
@@ -7,6 +8,7 @@ const Timer = () => {
   const totalTime = 25 * 60; // 25分
   const [timeLeft, setTimeLeft] = useState(totalTime);
   const [isRunning, setIsRunning] = useState(true);
+  const router = useRouter(); // ← 追加
 
   useEffect(() => {
     if (!isRunning) return;
@@ -23,6 +25,14 @@ const Timer = () => {
 
     return () => clearInterval(timer);
   }, [isRunning]);
+
+  // タイマーが0になったときにホームに戻る
+  useEffect(() => {
+    if (timeLeft === 0) {
+      sessionStorage.setItem("timerCompleted", "true");
+      router.push("/home"); 
+    }
+  }, [timeLeft, router]); 
 
   const formatTime = (seconds: number) => {
     const m = Math.floor(seconds / 60).toString().padStart(2, "0");
@@ -47,7 +57,6 @@ const Timer = () => {
           value={percentage}
           text={formatTime(timeLeft)}
           strokeWidth={2}
-          
           styles={buildStyles({
             pathColor: "#1E3A8A",
             textColor: "#ffffff",
