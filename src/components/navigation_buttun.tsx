@@ -52,11 +52,11 @@ const NavigationButton: React.FC<NavigationButtonProps> = ({ href, label, varian
         className={`${getClassName()} ${className || ''}`}
         style={{ backgroundColor: 'transparent', padding: 0, border: 'none' }}
       >
-        <img
+        <Image
           src="/images/timer_button.png"
-          style={{ width: '300px', height: '80px' }}
+          width={300}
+          height={80}
           alt={label}
-
         />
       </button>
     );

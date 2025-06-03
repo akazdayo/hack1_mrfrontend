@@ -4,10 +4,8 @@ import { Home_Header } from "@/components/home_header";
 import NavigationButton from "@/components/navigation_buttun";
 import ChatIcon from "@/components/icon/chat";
 import Memory_Icon from "@/components/icon/memory";
-import SettingIcon from "@/components/icon/setting";
 import { Goal } from "@/components/goal";
 import { useState, useEffect } from "react";
-import { updateTodaysStudy } from "@/lib/prisma";
 
 
 export default function Home() {
@@ -33,7 +31,7 @@ export default function Home() {
       },
     });
   }
-  
+
   return (
     <div className="relative min-h-screen overflow-hidden bg-gray-900/40">
       {/* 背景画像 */}
