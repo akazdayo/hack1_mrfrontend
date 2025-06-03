@@ -18,7 +18,7 @@ export async function createTodaysStudy(content: string) {
     try {
         const newStudy = await prisma.todays_study.create({
             data: {
-                id: crypto.randomUUID(),
+                id: "0",
                 content: content,
             },
         });
