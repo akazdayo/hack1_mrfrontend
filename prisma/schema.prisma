@@ -1,0 +1,142 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model account {
+  id                    String    @id
+  accountId             String
+  providerId            String
+  userId                String
+  accessToken           String?
+  refreshToken          String?
+  idToken               String?
+  accessTokenExpiresAt  DateTime?
+  refreshTokenExpiresAt DateTime?
+  scope                 String?
+  password              String?
+  createdAt             DateTime
+  updatedAt             DateTime
+  user                  user      @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model character {
+  id          String     @id
+  name        String
+  personality String
+  story       String
+  postedBy    String
+  modelUrl    String
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @default(now())
+  isPublic    Boolean    @default(false)
+  user        user       @relation(fields: [postedBy], references: [id], onDelete: Cascade)
+  favorite    favorite[]
+  voice       voice?
+}
+
+model favorite {
+  id          String    @id
+  characterId String
+  userId      String
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @default(now())
+  character   character @relation(fields: [characterId], references: [id], onDelete: Cascade)
+  user        user      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, characterId])
+}
+
+model session {
+  id        String   @id
+  expiresAt DateTime
+  token     String   @unique
+  createdAt DateTime
+  updatedAt DateTime
+  ipAddress String?
+  userAgent String?
+  userId    String
+  user      user     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model store {
+  prefix        String
+  key           String
+  value         Json
+  created_at    DateTime?       @default(now()) @db.Timestamptz(6)
+  updated_at    DateTime?       @default(now()) @db.Timestamptz(6)
+  expires_at    DateTime?       @db.Timestamptz(6)
+  ttl_minutes   Int?
+  store_vectors store_vectors[]
+
+  @@id([prefix, key])
+  @@index([prefix])
+}
+
+model store_migrations {
+  v Int @id
+}
+
+model store_vectors {
+  prefix     String
+  key        String
+  field_name String
+  embedding  Unsupported("vector")?
+  created_at DateTime?              @default(now()) @db.Timestamptz(6)
+  updated_at DateTime?              @default(now()) @db.Timestamptz(6)
+  store      store                  @relation(fields: [prefix, key], references: [prefix, key], onDelete: Cascade, onUpdate: NoAction)
+
+  @@id([prefix, key, field_name])
+  @@index([embedding])
+}
+
+model user {
+  id            String      @id
+  name          String
+  email         String      @unique
+  emailVerified Boolean
+  image         String?
+  createdAt     DateTime
+  updatedAt     DateTime
+  account       account[]
+  character     character[]
+  favorite      favorite[]
+  session       session[]
+  voice         voice[]
+}
+
+model vector_migrations {
+  v Int @id
+}
+
+model verification {
+  id         String    @id
+  identifier String
+  value      String
+  expiresAt  DateTime
+  createdAt  DateTime?
+  updatedAt  DateTime?
+}
+
+model voice {
+  id          String    @id
+  characterId String    @unique
+  userId      String
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @default(now())
+  character   character @relation(fields: [characterId], references: [id], onDelete: Cascade)
+  user        user      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, characterId])
+}
+
+model todays_study {
+  id        String   @id
+  createdAt DateTime @default(now())
+  content   String
+}

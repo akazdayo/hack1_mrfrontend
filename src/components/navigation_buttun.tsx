@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import React from 'react';
 import Image from "next/image";
 
-type Variant = 'chat' | 'setting' | 'memory' | 'timer' |'back' ; //chat,setthing,memory,timerにボタンを分ける
+type Variant = 'chat' | 'setting' | 'memory' | 'timer' | 'back'; //chat,setthing,memory,timerにボタンを分ける
 
 type NavigationButtonProps = {
   href: string;//リンク
@@ -13,12 +13,16 @@ type NavigationButtonProps = {
   variant: Variant;//種類
   className?: string;
   icon: React.ReactNode;//アイコンはそれぞれのページで読み込ませる
+  onClick?: () => void; // 追加: onClickプロパティ
 };
 
-const NavigationButton: React.FC<NavigationButtonProps> = ({ href, label, variant, className,icon }) => {
+const NavigationButton: React.FC<NavigationButtonProps> = ({ href, label, variant, className, icon, onClick }) => {
   const router = useRouter();
 
   const handleClick = () => {
+    if (onClick) {
+      onClick();
+    }
     router.push(href);
   };
 
@@ -34,7 +38,7 @@ const NavigationButton: React.FC<NavigationButtonProps> = ({ href, label, varian
       case 'timer':
         return 'border text-white px-6 py-4 rounded-xl shadow-lg ';
       case 'back':
-        return  ' text-white w-18 h-18  rounded-xl'
+        return ' text-white w-18 h-18  rounded-xl'
       default:
         return '';
     }
@@ -52,14 +56,14 @@ const NavigationButton: React.FC<NavigationButtonProps> = ({ href, label, varian
           src="/images/timer_button.png"
           style={{ width: '300px', height: '80px' }}
           alt={label}
-          
+
         />
       </button>
     );
   }
-  
-  
-//backボタンの構造も変える。枠線なし
+
+
+  //backボタンの構造も変える。枠線なし
   if (variant === 'back') {
     return (
       <button
@@ -67,8 +71,8 @@ const NavigationButton: React.FC<NavigationButtonProps> = ({ href, label, varian
         className={`${getClassName()} ${className || ''}`}
         style={{ padding: 0, border: 'none' }}
       >
-       <span className="flex items-center justify-center">{icon}</span>
-        
+        <span className="flex items-center justify-center">{icon}</span>
+
       </button>
     );
   }
@@ -76,8 +80,8 @@ const NavigationButton: React.FC<NavigationButtonProps> = ({ href, label, varian
   // 通常のボタン構造（ホーム画面の3つのボタンの共通部分のcss）
   return (
     <button onClick={handleClick} className={`${getClassName()} ${className || ''}`}
-    style={{ backgroundColor: '#ffffff', border: '1px solid #F9BF8D' }}>
-       <span className="flex items-center justify-center">{icon}</span>
+      style={{ backgroundColor: '#ffffff', border: '1px solid #F9BF8D' }}>
+      <span className="flex items-center justify-center">{icon}</span>
       {label}
     </button>
   );
