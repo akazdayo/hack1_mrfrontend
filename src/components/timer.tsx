@@ -57,7 +57,7 @@ const Timer = () => {
           text={formatTime(timeLeft)}
           strokeWidth={2}
           styles={buildStyles({
-            pathColor: "#1E3A8A",
+            pathColor: "#AB6666",
             textColor: "#ffffff",
             trailColor: "#ffffff",
             textSize: "16px",
