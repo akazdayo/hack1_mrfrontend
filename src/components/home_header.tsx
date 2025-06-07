@@ -15,7 +15,7 @@ export function Home_Header() {
           
           <div className="pl-10" style={{ color: '#AB6666' }}>
             <h2 className="text-2xl font-bold border-white ">アリス</h2>
-            <h2 className="text-md font-normal">Level</h2>
+            <h2 className="text-md font-normal">Level 1</h2>
           </div>
         </div>
       
